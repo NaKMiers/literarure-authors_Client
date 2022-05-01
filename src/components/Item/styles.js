@@ -24,7 +24,7 @@ export default makeStyles(theme => ({
       width: 100,
       color: '#fff',
       fontSize: 24,
-      border: '6px solid transparent',
+      border: '6px solid #fff',
       zIndex: 1,
    },
    orderNumberLeft: {
