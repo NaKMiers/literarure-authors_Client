@@ -16,14 +16,11 @@ function Item({ index, data, right, isAdmin, actionsCreator }) {
    const [value, setValue] = useState(data.content)
    const [valueEditing, setValueEditing] = useState(data.content)
 
-   console.log(data.content)
-
    const styles = useStyles()
 
    const handleSave = async () => {
       try {
          const res = await apis.editData(data._id, valueEditing)
-         console.log('res-editData: ', res)
          actionsCreator.editData(res.data._id, res.data)
          setValue(valueEditing)
          setEditing(false)

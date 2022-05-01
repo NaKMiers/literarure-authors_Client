@@ -9,8 +9,6 @@ import { bindActionCreators } from 'redux'
 import actions from '../../actions'
 
 function HomePage({ datas, actionCreators }) {
-   console.log('homePage')
-
    const styles = useStyles()
 
    useEffect(() => {

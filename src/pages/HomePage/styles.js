@@ -5,6 +5,7 @@ export default makeStyles(theme => ({
       maxWidth: 1024,
       margin: 'auto',
       minHeight: '100vh',
+      padding: '0px 12px',
    },
 
    main: {
