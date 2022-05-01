@@ -1,6 +1,12 @@
 import { makeStyles } from '@mui/styles'
 
 export default makeStyles(theme => ({
+   '@global': {
+      '*::-webkit-scrollbar': {
+         width: 0,
+         height: 0,
+      },
+   },
    item: {
       marginBottom: 64,
       position: 'relative',
@@ -34,6 +40,10 @@ export default makeStyles(theme => ({
    },
    productName: {
       display: 'inline-block',
+      whiteSpace: 'nowrap',
+      maxWidth: '100%',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
       height: 40,
       lineHeight: '40px',
       background: '#2196f3',
@@ -53,6 +63,10 @@ export default makeStyles(theme => ({
    author: {
       position: 'relative',
       display: 'inline-block',
+      whiteSpace: 'nowrap',
+      maxWidth: '100%',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
       height: 40,
       lineHeight: '40px',
       background: '#ffeb3b',
@@ -107,7 +121,10 @@ export default makeStyles(theme => ({
       padding: '8px 52px',
       borderRadius: 16,
       marginTop: 6,
-      overflow: 'hidden',
+      '&.MuiCollapse-root': {
+         overflow: 'scroll',
+         maxHeight: 350,
+      },
    },
    collapseRight: {
       marginTop: 48,
@@ -195,7 +212,5 @@ export default makeStyles(theme => ({
       fontSize: 18,
       padding: '8px 16px',
       marginTop: 6,
-      resize: 'none',
-      maxHeight: 350,
    },
 }))
