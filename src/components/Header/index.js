@@ -1,4 +1,5 @@
 import { Typography } from '@mui/material'
+import { memo } from 'react'
 import useStyles from './styles'
 
 function Header() {
@@ -12,4 +13,4 @@ function Header() {
    )
 }
 
-export default Header
+export default memo(Header)

@@ -1,6 +1,6 @@
 import ShowIcon from '@mui/icons-material/ArrowBackIos'
 import { Box } from '@mui/material'
-import { useRef, useState } from 'react'
+import { memo, useRef, useState } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import actions from '../../actions'
@@ -79,4 +79,4 @@ const mapDispatch = dispatch => ({
    actionCreators: bindActionCreators(actions, dispatch),
 })
 
-export default connect(mapState, mapDispatch)(Footer)
+export default connect(mapState, mapDispatch)(memo(Footer))

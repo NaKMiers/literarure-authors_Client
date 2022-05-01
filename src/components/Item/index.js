@@ -3,7 +3,7 @@ import SaveIcon from '@mui/icons-material/Done'
 import EditIcon from '@mui/icons-material/Edit'
 import { Box, Button, Collapse, TextareaAutosize } from '@mui/material'
 import clsx from 'clsx'
-import { useState } from 'react'
+import { memo, useState } from 'react'
 import useStyles from './styles'
 import { connect } from 'react-redux'
 import apis from '../../apis'
@@ -15,6 +15,8 @@ function Item({ index, data, right, isAdmin, actionsCreator }) {
    const [editing, setEditing] = useState(false)
    const [value, setValue] = useState(data.content)
    const [valueEditing, setValueEditing] = useState(data.content)
+
+   console.log(data.content)
 
    const styles = useStyles()
 
@@ -128,4 +130,4 @@ const mapDispatch = dispatch => ({
    actionsCreator: bindActionCreators(actions, dispatch),
 })
 
-export default connect(mapState, mapDispatch)(Item)
+export default connect(mapState, mapDispatch)(memo(Item))

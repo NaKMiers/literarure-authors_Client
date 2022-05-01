@@ -2,7 +2,7 @@ import { Box } from '@mui/material'
 import Item from '../../components/Item'
 import Header from '../../components/Header'
 import useStyles from './styles'
-import { useEffect } from 'react'
+import { memo, useEffect } from 'react'
 import apis from '../../apis'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
@@ -46,4 +46,4 @@ const mapDispatch = dispatch => ({
    actionCreators: bindActionCreators(actions, dispatch),
 })
 
-export default connect(mapState, mapDispatch)(HomePage)
+export default connect(mapState, mapDispatch)(memo(HomePage))

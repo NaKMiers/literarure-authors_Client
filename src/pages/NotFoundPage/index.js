@@ -1,4 +1,5 @@
 import { Box, Typography } from '@mui/material'
+import { memo } from 'react'
 import { Link } from 'react-router-dom'
 import useStyles from '../HomePage/styles'
 
@@ -17,4 +18,4 @@ function NotFoundPage() {
    )
 }
 
-export default NotFoundPage
+export default memo(NotFoundPage)
