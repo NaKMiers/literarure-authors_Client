@@ -8,8 +8,9 @@ export default makeStyles(theme => ({
       },
    },
    item: {
-      marginBottom: 64,
       position: 'relative',
+      minHeight: 100,
+      marginBottom: 64,
    },
    orderNumber: {
       position: 'absolute',
@@ -23,7 +24,7 @@ export default makeStyles(theme => ({
       width: 100,
       color: '#fff',
       fontSize: 24,
-      border: '6px solid #fff',
+      border: '6px solid transparent',
       zIndex: 1,
    },
    orderNumberLeft: {
@@ -50,7 +51,6 @@ export default makeStyles(theme => ({
       borderRadius: 16,
       padding: '0px 36px 0px 76px',
       color: '#fff',
-      marginBottom: 5,
       fontSize: 24,
       letterSpacing: '1px',
    },

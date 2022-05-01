@@ -4,13 +4,13 @@ export default makeStyles(theme => ({
    heading: {
       '&.MuiTypography-root': {
          fontSize: 58,
-         margin: '16px auto 0px auto !important',
+         margin: '0px auto 0px auto !important',
          textAlign: 'center',
          fontWeight: 'bold',
-         background: 'linear-gradient(90deg, #c2b900, #4af0a6, #e24a4a, #00d4ff)',
-         WebkitBackgroundClip: 'text',
-         WebkitTextFillColor: 'transparent',
          fontFamily: 'Nunito, cursive !important',
+         padding: '16px 0px 0px 0px',
+         color: '#333',
+         textShadow: '1px 2px 1px #ddd',
       },
    },
    subHeading: {
@@ -22,6 +22,7 @@ export default makeStyles(theme => ({
          fontWeight: 'light',
          color: '#666',
          textDecoration: 'underline',
+         textShadow: '1px 1px 0.5px #ddd',
       },
    },
 }))
