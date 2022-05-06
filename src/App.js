@@ -5,7 +5,8 @@ import routes from './routes'
 import { makeStyles } from '@mui/styles'
 const useStyles = makeStyles(() => ({
    app: {
-      background: 'url(/images/bg.jpg)',
+      // background: 'url(/images/bg.jpg)',
+      background: 'linear-gradient(90deg, #cfd9df, #ebedee, #e2ebf0)',
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center',

@@ -16,15 +16,15 @@ export default makeStyles(theme => ({
       position: 'absolute',
       top: 0,
       display: 'inline-block',
-      background: '#f44336',
+      background: '#FFFFFF',
       borderRadius: '50%',
       textAlign: 'center',
       lineHeight: '88px',
       height: 100,
       width: 100,
-      color: '#fff',
+      color: '#333',
       fontSize: 24,
-      border: '6px solid #fff',
+      border: '6px solid #565656',
       zIndex: 1,
    },
    orderNumberLeft: {
@@ -47,7 +47,7 @@ export default makeStyles(theme => ({
       textOverflow: 'ellipsis',
       height: 40,
       lineHeight: '40px',
-      background: '#2196f3',
+      background: '#141414',
       borderRadius: 16,
       padding: '0px 36px 0px 76px',
       color: '#fff',
@@ -69,7 +69,7 @@ export default makeStyles(theme => ({
       textOverflow: 'ellipsis',
       height: 40,
       lineHeight: '40px',
-      background: '#ffeb3b',
+      background: '#FFFFFF',
       borderRadius: 16,
       padding: '0px 36px 0px 76px',
       color: '#333',
@@ -78,7 +78,7 @@ export default makeStyles(theme => ({
       transition: 'all 0.3s ease-in-out',
       cursor: 'pointer',
       '&:hover': {
-         background: 'rgba(255,235,59, 0.5)',
+         background: 'rgba(255, 255, 255, 0.5)',
       },
    },
    authorRight: {
@@ -117,7 +117,7 @@ export default makeStyles(theme => ({
    },
    collapse: {
       position: 'relative',
-      background: '#ffe3b3',
+      background: '#FFFFFF',
       padding: '8px 52px',
       borderRadius: 16,
       marginTop: 6,
@@ -129,13 +129,28 @@ export default makeStyles(theme => ({
    collapseRight: {
       marginTop: 48,
    },
+
+   collapseContent: {
+      display: 'flex',
+      alignItems: 'center',
+      padding: '8px 0px',
+      '@media (max-width: 600px)': {
+         flexDirection: 'column',
+      },
+   },
+   avtAuthor: {
+      width: 140,
+      height: 140,
+      borderRadius: 4,
+      marginRight: 24,
+   },
    editBtn: {
       '&.MuiButton-root': {
          position: 'absolute',
          top: 0,
          borderTopRightRadius: 16,
          padding: '4px 4px',
-         background: '#2196f3',
+         background: '#9e9e9e',
          minWidth: 0,
       },
    },
@@ -186,7 +201,7 @@ export default makeStyles(theme => ({
          position: 'absolute',
          top: 36,
          padding: '4px 4px',
-         background: '#ccc',
+         background: '#9e9e9e',
          minWidth: 0,
       },
    },

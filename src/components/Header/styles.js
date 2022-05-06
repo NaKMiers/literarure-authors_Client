@@ -9,8 +9,8 @@ export default makeStyles(theme => ({
          fontWeight: 'bold',
          fontFamily: 'Nunito, cursive !important',
          padding: '16px 0px 0px 0px',
-         color: '#333',
-         textShadow: '1px 2px 1px #ddd',
+         color: '#9e9e9e',
+         textShadow: '1px 2px 1px #333',
       },
    },
    subHeading: {
@@ -20,9 +20,9 @@ export default makeStyles(theme => ({
          textAlign: 'center',
          fontFamily: 'Nunito, cursive !important',
          fontWeight: 'light',
-         color: '#666',
+         color: '#565656',
          textDecoration: 'underline',
-         textShadow: '1px 1px 0.5px #ddd',
+         textShadow: '1px 1px 0.5px #fff',
       },
    },
 }))

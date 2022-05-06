@@ -10,7 +10,7 @@ import apis from '../../apis'
 import actions from '../../actions'
 import { bindActionCreators } from 'redux'
 
-function Item({ index, data, right, isAdmin, actionsCreator }) {
+function Item({ index, data, image, right, isAdmin, actionsCreator }) {
    const [expanded, setExpanded] = useState(false)
    const [editing, setEditing] = useState(false)
    const [value, setValue] = useState(data.content)
@@ -36,15 +36,11 @@ function Item({ index, data, right, isAdmin, actionsCreator }) {
                styles.orderNumber,
                right ? styles.orderNumberRight : styles.orderNumberLeft
             )}
-            style={{ background: data?.bg1, color: data?.color1 }}
          >
             {index}
          </Box>
          <Box className={right ? styles.topRight : styles.topLeft}>
-            <Box
-               className={clsx(styles.productName, right && styles.productNameRight)}
-               style={{ background: data?.bg2, color: data?.color2 }}
-            >
+            <Box className={clsx(styles.productName, right && styles.productNameRight)}>
                {data.lesson}
             </Box>
             <br />
@@ -53,11 +49,6 @@ function Item({ index, data, right, isAdmin, actionsCreator }) {
                className={clsx(styles.author, right && styles.authorRight, {
                   [styles.authorAvtive]: expanded,
                })}
-               style={{
-                  width: data.width,
-                  background: data?.bg3,
-                  color: data?.color3,
-               }}
                onClick={() => setExpanded(!expanded)}
             >
                {data.author}
@@ -111,7 +102,14 @@ function Item({ index, data, right, isAdmin, actionsCreator }) {
                      value={valueEditing}
                   />
                ) : (
-                  value.split('\n').map((d, i) => <p key={i}>{d}</p>)
+                  <Box className={styles.collapseContent}>
+                     <img className={styles.avtAuthor} src={data.image} alt='' />
+                     <div>
+                        {value.split('\n').map((d, i) => (
+                           <p key={i}>{d}</p>
+                        ))}
+                     </div>
+                  </Box>
                )}
             </Collapse>
          </Box>
