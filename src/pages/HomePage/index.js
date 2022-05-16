@@ -1,14 +1,16 @@
-import { Box } from '@mui/material'
-import Item from '../../components/Item'
-import Header from '../../components/Header'
-import useStyles from './styles'
-import { memo, useEffect } from 'react'
-import apis from '../../apis'
+import { Backdrop, Box, CircularProgress } from '@mui/material'
+import { memo, useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import actions from '../../actions'
+import apis from '../../apis'
+import Header from '../../components/Header'
+import Item from '../../components/Item'
+import useStyles from './styles'
 
 function HomePage({ datas, actionCreators }) {
+   const [isOpenBackdrop, setOpenBackdrop] = useState(true)
+
    const styles = useStyles()
 
    useEffect(() => {
@@ -16,6 +18,7 @@ function HomePage({ datas, actionCreators }) {
          try {
             const res = await apis.getData()
             actionCreators.setData(res.data)
+            setOpenBackdrop(false)
          } catch (err) {
             console.log(err)
          }
@@ -32,6 +35,13 @@ function HomePage({ datas, actionCreators }) {
          <Header />
 
          <Box className={styles.main}>{renderItems()}</Box>
+
+         <Backdrop
+            sx={{ color: '#fff', zIndex: theme => theme.zIndex.drawer + 1 }}
+            open={isOpenBackdrop}
+         >
+            <CircularProgress color='inherit' />
+         </Backdrop>
       </Box>
    )
 }
